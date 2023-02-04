@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Edit product</h2>
+
+
+<form action="{% url 'products:edit_product' product.id%}" method="POST">
+    {% csrf_token %}
+    <table border="1">
+        {{ form }}
+    </table>
+
+    <button type="submit">Edit product</button>
+</form>
+
+{% endblock %}

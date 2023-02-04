@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Добавить товар</h2>
+
+
+<form action="{% url 'products:thanks' %}" method="post">
+
+    {% csrf_token %}
+    
+    <table border="1">
+        {{ form }}
+    </table>
+    <button type="submit">Добавить</button>
+</form>
+
+{% endblock %}

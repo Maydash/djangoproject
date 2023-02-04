@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Product_group</h1>
+    <ul>
+    {% for g in group %}
+    
+    <li><a href="/">{{ g.title}}</a></li><br>
+    {% endfor %}
+    </ul>
+{% endblock %}

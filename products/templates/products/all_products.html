@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <form action="">
+        <fieldset>
+        <label for="name">поиск</label>
+        <input id="name">
+        <input type="submit" value="поиск">
+        </fieldset>
+    </form>
+    <h2>Все товары</h2>
+    <table border="1">
+    <tr>
+        <td><h4>Наименование:</h4></td>
+        <td>&nbsp</td>
+        <td><h4>Цена:</h4></td>
+
+    </tr>
+
+    {% for product in products %}
+    
+        <tr>
+            
+            <td><a href="{% url 'products:product_detail' product.id %}">{{ product.title}}</a></td>
+            <td>&nbsp</td>
+
+            <td><a href="{% url 'products:product_detail' product.id %}">{{ product.price}}</a></td>
+        </tr>   
+    
+    {% endfor %}
+    </table>
+{% endblock %}

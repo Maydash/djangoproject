@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Описание товара:</h1>
+    <table border="1">
+    <tr>
+    <td>Название:{{product.title}}</a></td>
+    </tr>
+    <td>Цена:{{product.price}}</a></td>
+    <tr>
+    <td>Описание:{{product.description}}</a></td>
+</tr>
+    <td>Добавлено:{{product.created_at}}</a></td>
+    <tr>
+    <td>Обновление:{{product.updated_at}}</a></td>
+</tr>
+    <td>В наличии:{{product.quantity}}</a></td>
+</tr>
+    </table>
+<br>
+    <form action="{% url 'products:delete_product' product.id%}" method="">
+        <button type="submit"> Delete</button>
+    </form>
+<br>
+    <form action="{% url 'products:edit_product' product.id %}" method="">
+        <button type="submit"> Edit product</button>
+    </form>
+<br>
+
+
+{% endblock %}

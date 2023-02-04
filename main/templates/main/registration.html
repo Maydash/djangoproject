@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Регистрация</h1>
+
+    <form action="#">
+        <p><i>Пожалуйста, заполните форму. Обязательные поля помечены </i><em>*</em></p>
+        <fieldset>
+          <legend>Контактная информация</legend>
+            <label for="name">Имя <em>*</em></label>
+            <input id="name"><br>
+            <label for="telephone">Телефон</label>
+            <input id="telephone"><br>
+            <label for="email">Email <em>*</em></label>
+            <input id="email"><br>
+        </fieldset>
+        <fieldset>
+          <legend>Персональная информация</legend>
+            <label for="age">Возраст<em>*</em></label>
+            <input id="age"><br>
+            <label for="gender">Пол</label>
+            <select id="gender">
+              <option value="female">Женщина</option>
+              <option value="male">Мужчина</option>
+            </select><br>
+        </fieldset>
+        <p><input type="submit" value="Отправить информацию"></p>
+      </form>
+ 
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Товар добавлен успешно</h2>
+    <table border="1">
+        <tr>
+            <td><h4>Наименование:</h4></td>
+            <td>&nbsp</td>
+            <td><h4>Цена:</h4></td>
+            <td>&nbsp</td>
+            <td><h4>Описание:</h4></td>
+            <td>&nbsp</td>
+            <td><h4>В наличии:</h4></td>
+            <td>&nbsp</td>
+            <td><h4>Добавлено:</h4></td>
+        </tr>
+        <tr>
+            <td><h4>{{p.title}}</h4></td>
+            <td>&nbsp</td>
+            <td><h4>{{p.price}}</h4></td>
+            <td>&nbsp</td>
+            <td><h4>{{p.description}}</h4></td>
+            <td>&nbsp</td>
+            <td><h4>{{p.quantity}}</h4></td>
+            <td>&nbsp</td>
+            <td><h4>{{p.created_at}}</h4></td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+    <table border=1>
+    <tr>
+        <td><h4>Наименование:</h4></td>
+        <td>&nbsp</td>
+        <td><h4>Цена:</h4></td>
+    
+    </tr>
+
+    {% for s in quantity %}
+    <tr>
+        <td><a href="{% url 'products:product_detail' s.id %}">{{ s.title}}</td>
+        <td>&nbsp</td>
+        <td>{{ s.price}}</td>
+    
+    </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Вы ействительно хотите удалить данный продукт!</h2>
+
+
+<form action="{% url 'products:delete_product' product.id%}" method="POST">
+    {% csrf_token %}
+    <table border="1">
+        {{ form }}
+    </table>
+
+    <button type="submit">Удалить</button>
+</form>
+
+{% endblock %}
